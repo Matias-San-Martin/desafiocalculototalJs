@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafío 1 - JavaScript</title>
     <link rel="stylesheet" href="estilos.css">
+    <script defer src="./index.js"></script>
 </head>
 
 <body>
@@ -14,16 +15,24 @@
     <section>
         <div class="card">
             <div class="img-card"></div>
-              <h6>Laptop Gamer AMD</h6>
-              <p>Precio base: $<span class="precio-inicial"></span> </p>
+            <h6>Laptop Gamer AMD</h6>
+            <p>Precio base: $<span class="precio-inicial"></span></p>
         
-              <p>Cantidad:
+            <p>Cantidad:
                 <span class="cantidad">0</span>
-                <button 
+                <button onclick="
+                cantidadComprar.innerHTML = Number(cantidadComprar.innerHTML) + 1
+                valorTotal.innerHTML = Number(cantidadComprar.innerHTML * precioSpan.innerHTML)
+                "
+                
                 >+</button>
-                <button
+                <button onclick="
+                cantidadComprar.innerHTML = Number(cantidadComprar.innerHTML) - 1
+                valorTotal.innerHTML = Number(cantidadComprar.innerHTML * precioSpan.innerHTML)
+                "
+                
                 >-</button>
-              </p>
+            </p>
             </div>
 
         </div>
@@ -31,11 +40,6 @@
 
     <div class="total-section">
         <p>Total a pagar: $<span class="valor-total"></span> </p>
-    </div>
-
-    <script src="index.js">
-      
-
-    </script>
+    </div>   
 </body>
 </html>
